@@ -1,0 +1,64 @@
+# Project: PQueue
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o pqueue_init.o pqueue_isEmpty.o pqueue_push.o pqueue_pop.o pqueue_top.o queue_init.o queue_isEmpty.o queue_push.o queue_pop.o queue_front.o queue_front_index.o count_time.o
+LINKOBJ  = main.o pqueue_init.o pqueue_isEmpty.o pqueue_push.o pqueue_pop.o pqueue_top.o queue_init.o queue_isEmpty.o queue_push.o queue_pop.o queue_front.o queue_front_index.o count_time.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = PQueue.exe
+CXXFLAGS = $(CXXINCS) -std=c99
+CFLAGS   = $(INCS) -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+pqueue_init.o: pqueue_init.c
+	$(CC) -c pqueue_init.c -o pqueue_init.o $(CFLAGS)
+
+pqueue_isEmpty.o: pqueue_isEmpty.c
+	$(CC) -c pqueue_isEmpty.c -o pqueue_isEmpty.o $(CFLAGS)
+
+pqueue_push.o: pqueue_push.c
+	$(CC) -c pqueue_push.c -o pqueue_push.o $(CFLAGS)
+
+pqueue_pop.o: pqueue_pop.c
+	$(CC) -c pqueue_pop.c -o pqueue_pop.o $(CFLAGS)
+
+pqueue_top.o: pqueue_top.c
+	$(CC) -c pqueue_top.c -o pqueue_top.o $(CFLAGS)
+
+queue_init.o: queue_init.c
+	$(CC) -c queue_init.c -o queue_init.o $(CFLAGS)
+
+queue_isEmpty.o: queue_isEmpty.c
+	$(CC) -c queue_isEmpty.c -o queue_isEmpty.o $(CFLAGS)
+
+queue_push.o: queue_push.c
+	$(CC) -c queue_push.c -o queue_push.o $(CFLAGS)
+
+queue_pop.o: queue_pop.c
+	$(CC) -c queue_pop.c -o queue_pop.o $(CFLAGS)
+
+queue_front.o: queue_front.c
+	$(CC) -c queue_front.c -o queue_front.o $(CFLAGS)
+
+queue_front_index.o: queue_front_index.c
+	$(CC) -c queue_front_index.c -o queue_front_index.o $(CFLAGS)
+
+count_time.o: count_time.c
+	$(CC) -c count_time.c -o count_time.o $(CFLAGS)
