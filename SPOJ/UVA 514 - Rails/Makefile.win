@@ -1,0 +1,46 @@
+# Project: Rails
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o init.o isEmpty.o push.o pop.o top.o trainSolve.o
+LINKOBJ  = main.o init.o isEmpty.o push.o pop.o top.o trainSolve.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Rails.exe
+CXXFLAGS = $(CXXINCS) -std=c99
+CFLAGS   = $(INCS) -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+init.o: init.c
+	$(CC) -c init.c -o init.o $(CFLAGS)
+
+isEmpty.o: isEmpty.c
+	$(CC) -c isEmpty.c -o isEmpty.o $(CFLAGS)
+
+push.o: push.c
+	$(CC) -c push.c -o push.o $(CFLAGS)
+
+pop.o: pop.c
+	$(CC) -c pop.c -o pop.o $(CFLAGS)
+
+top.o: top.c
+	$(CC) -c top.c -o top.o $(CFLAGS)
+
+trainSolve.o: trainSolve.c
+	$(CC) -c trainSolve.c -o trainSolve.o $(CFLAGS)
