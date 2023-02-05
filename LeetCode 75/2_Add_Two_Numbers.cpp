@@ -18,24 +18,25 @@ class Solution
 public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
     {
+        int sum = 0;
         ListNode *result = new ListNode(0);
         ListNode *currNode = result;
-        int sum = 0;
+
         while (l1 || l2)
         {
             if (l1)
             {
                 sum += l1->val;
-                cout << "l1 " << sum << endl;
+                // cout << "l1 " << sum << endl;
                 l1 = l1->next;
             }
             if (l2)
             {
                 sum += l2->val;
-                cout << "l2 " << sum << endl;
+                // cout << "l2 " << sum << endl;
                 l2 = l2->next;
             }
-            cout << sum << endl;
+            // cout << sum << endl;
             currNode->next = new ListNode(sum % 10);
             currNode = currNode->next;
 
@@ -44,6 +45,8 @@ public:
             else
                 sum = 0;
         }
+        if (sum)
+            currNode->next = new ListNode(1);
 
         return result->next;
     }
