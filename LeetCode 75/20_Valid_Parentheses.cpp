@@ -6,21 +6,21 @@ class Solution {
 public:
     bool isValid(string s) {
         stack<char> parantheses;
-        for(char c: s) {
-            if(c == '(' || c == '[' || c == '{') {
-                parantheses.push(c);
+        for(int i = 0; i < s.length(); i++) {
+            if(s[i] == '(' || s[i] == '[' || s[i] == '{') {
+                parantheses.push(s[i]);
             }
-            else if(c == ')') {
+            else if(s[i] == ')') {
                 if(parantheses.empty() || parantheses.top() != '(')
                     return false;
                 parantheses.pop();
             }
-            else if(c == ']') {
+            else if(s[i] == ']') {
                 if(parantheses.empty() || parantheses.top() != '[')
                     return false;
                 parantheses.pop();
             }
-            else if(c == '}') {
+            else if(s[i] == '}') {
                 if(parantheses.empty() || parantheses.top() != '{')
                     return false;
                 parantheses.pop();
