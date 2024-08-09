@@ -1,4 +1,3 @@
-# Write your MySQL query statement below
 select
     MAX(salary) SecondHighestSalary
 from
